@@ -1,7 +1,6 @@
 package lab4;
 
 import java.util.Scanner;
-import java.util.Collections;
 
 public class matrix {
 	static Scanner enter = new Scanner(System.in);
