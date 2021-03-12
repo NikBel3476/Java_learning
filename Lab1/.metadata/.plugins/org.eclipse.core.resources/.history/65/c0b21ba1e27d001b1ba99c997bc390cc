@@ -1,0 +1,24 @@
+package lab1;
+
+import java.util.Scanner;
+
+public class DigitsSum {
+//	private int sumDigits(int[] args) {
+//		
+//	}
+	
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner enter = new Scanner(System.in);
+		
+		System.out.println("¬ведите число");
+		int n = enter.nextInt();
+		// разбиваем число на массив из символов
+		char[] digits = String.valueOf(n).toCharArray();
+		int sum = 0;
+		for (int i = 0; i < digits.length; i++) {
+			sum += Character.digit(digits[i], 10);
+		}
+		System.out.println(sum);
+	}
+}

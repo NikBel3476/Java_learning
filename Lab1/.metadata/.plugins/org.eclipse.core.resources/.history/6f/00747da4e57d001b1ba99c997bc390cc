@@ -1,0 +1,16 @@
+package lab2;
+
+public class pascalTriangle {
+	private static int fact(int n) {
+		if (n == 0) return 1;
+		return n * fact(n - 1);
+	}
+	
+	private static int C(int n, int k) {
+		return fact(n) / fact(fact(k) * fact(n-k));
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(C(4,2));
+	}
+}

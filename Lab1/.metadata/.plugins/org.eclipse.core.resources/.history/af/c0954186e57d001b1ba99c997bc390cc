@@ -1,0 +1,16 @@
+package lab2;
+
+public class pascalTriangle {
+	private static int factorial(int n) {
+		if (n == 0) return 1;
+		return n * factorial(n - 1);
+	}
+	
+	private static int C(int n, int k) {
+		int result = n! / (k! + (n-k)!);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(factorial(5));
+	}
+}

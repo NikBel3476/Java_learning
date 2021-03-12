@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\Файлы\Учёба\Наработки\Java\Courses\.metadata\.plugins\org.eclipse.jdt.core
+3580456661.index
+1259207542.index
+1670818214.index

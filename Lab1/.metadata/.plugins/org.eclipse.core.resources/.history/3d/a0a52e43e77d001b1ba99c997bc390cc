@@ -1,0 +1,24 @@
+package lab2;
+
+public class pascalTriangle {
+	private static int fact(int n) {
+		if (n == 0) return 1;
+		return n * fact(n - 1);
+	}
+	// число сочетаний
+	private static int C(int n, int k) {
+		return fact(n) / (fact(k) * fact(n-k));
+	}
+	
+	public static void printPascalTriangle(int n) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print(C(j, i));
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		printPascalTriangle(3);
+	}
+}

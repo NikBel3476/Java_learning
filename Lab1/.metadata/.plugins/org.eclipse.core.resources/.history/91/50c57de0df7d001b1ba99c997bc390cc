@@ -1,0 +1,10 @@
+package lab1;
+
+public class DigitsSum {
+	private int n;
+	
+	public static void main(String[] args) {
+		DigitsSum sum = new DigitsSum();
+		System.out.println("hey");
+	}
+}

@@ -1,0 +1,9 @@
+package lab1;
+
+public abstract class DigitsSum(String[] args) {
+		
+}
+
+public class Main {
+
+}

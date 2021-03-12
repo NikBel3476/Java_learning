@@ -1,0 +1,11 @@
+package lab1;
+
+private class 
+
+public class DigitsSum {
+	private int n;
+	
+	public void alert() {
+		System.out.println("hey");
+	}
+}

@@ -1,0 +1,13 @@
+package lab1;
+
+import java.util.Scanner;
+
+public class DigitsSum {
+	public static void main(String[] args) {
+		Scanner enter = new Scanner(System.in);
+		
+		System.out.println("¬ведите число n");
+		int n = enter.nextInt();
+		System.out.println("n = " + n);
+	}
+}
