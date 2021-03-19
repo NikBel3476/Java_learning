@@ -5,7 +5,7 @@ import java.io.*;
 
 public class fileWorker {
 	
-	private static String fileReader(String fileName) {
+	private static String readFile(String fileName) {
 		File f = new File(fileName);
 		String str = "";
 		if (f.isFile()) {
@@ -21,6 +21,21 @@ public class fileWorker {
 			}
 		}
 		return str;
+	}
+	
+	private static void writeFile(String str, String fileName) {
+		try {
+			File f = new File(fileName);
+			FileWriter fw = new FileWriter(f, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.printf(str);
+			pw.close();
+			System.out.println("file has written");
+		} catch(IOException e) {
+			System.out.println("ошибка открытия потока " + e);
+			System.exit(1);
+		}
 	}
 	
 	private static String strTransform(String str) {
@@ -40,15 +55,6 @@ public class fileWorker {
 	
 	
 	public static void main(String[] args) {
-//		File fp = new File("stringTransform.txt");
-//		try {
-//			if (fp.createNewFile()) {
-//				System.out.println("File " + fp.getName() + " created");
-//			}
-//		} catch (IOException e) {
-//			{System.out.println(e); }
-//		}
-		
-		System.out.println(strTransform(fileReader("stringTransform.txt")));
+		writeFile(strTransform(readFile("originString.txt")), "result.txt");
 	}
 }
