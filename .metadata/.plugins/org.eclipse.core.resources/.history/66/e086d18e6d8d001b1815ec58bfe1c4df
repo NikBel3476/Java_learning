@@ -1,0 +1,57 @@
+package lab6;
+
+public class StudentGroup {
+	
+	private Student Nikolaj = new Student("Петров", "Николай", "Борисович");
+	private Student Vasilij = new Student("Смирнов", "Василий", "Александрович");
+	private Student Boris = new Student("Грачев", "Борис", "Данилович");
+	private Student Mariya = new Student("Орлова", "Мария", "Сергеевна");
+	private Student Yuliya = new Student("Морозова", "Юлия", "Михайловна");
+	
+	public void main(String[] args) {
+		
+	}
+}
+
+class Student {
+	private String name;
+	private String surname;
+	private String patronymic;
+	
+	public Student(String name, String surname, String patronymic) {
+		this.name = name;
+		this.surname = surname;
+		this.patronymic = patronymic;
+	}
+	
+	// getters
+	public String getName() {
+		return name;
+	}
+	
+	public String getSurname() {
+		return surname;
+	}
+	
+	public String getPatronymic() {
+		return patronymic;
+	}
+	
+	//setters
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	public void setPatronymic(String patronymic) {
+		this.patronymic = patronymic;
+	}
+	
+	public String toString() {
+		return ("Студент " + surname + " " + name + " " + patronymic)
+	}
+	
+}

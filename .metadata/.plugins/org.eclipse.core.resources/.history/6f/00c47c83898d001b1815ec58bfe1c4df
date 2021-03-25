@@ -1,0 +1,49 @@
+package lab6;
+
+import java.util.Arrays;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Student[] Students = {
+				new Student("Петров", "Николай", "Борисович"),
+				new Student("Смирнов", "Василий", "Александрович"),
+				new Student("Грачев", "Борис", "Данилович"),
+				new Student("Орлова", "Мария", "Сергеевна"),
+				new Student("Морозова", "Юлия", "Михайловна"),
+				new Student("Борисов", "Андрей", "Михайловна"),
+				new Student("Петров", "Михаил", "Алексеевич"),
+				new Student("Максимова", "Татьяна", "Евгеньевна"),
+				new Student("Чернова", "Оксана", "Анатольевна"),
+				new Student("Петров", "Михаил", "Андреевич"),
+		};
+		
+		Group[] Groups = {
+				new Group("Математика", 1),
+				new Group("Физика", 2),
+				new Group("Химия", 3),
+				new Group("История", 4),
+				new Group("Информатика", 5)
+		};
+		
+		// toString
+		System.out.println("Groups before sorting");
+		for (Group group: Groups) {
+			System.out.println(group.toString());
+		}
+		System.out.println("Students before sotring");
+		for (Student student: Students) {
+			System.out.println(student.toString());
+		}
+		
+		// sorting
+		Arrays.sort(Groups);
+		Arrays.sort(Students);
+		for (Group group: Groups) {
+			System.out.println(group.toString());
+		}
+		for (Student student: Students) {
+			System.out.println(student.toString());
+		}
+	}
+}

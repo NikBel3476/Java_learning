@@ -1,0 +1,15 @@
+package lab6;
+
+public class StudentGroup {
+	private Student Nikolaj = new Student("Петров", "Николай", "Борисович");
+	private Student Vasilij = new Student("Смирнов", "Василий", "Александрович");
+	private Student Boris = new Student("Грачев", "Борис", "Данилович");
+	private Student Mariya = new Student("Орлова", "Мария", "Сергеевна");
+	private Student Yuliya = new Student("Морозова", "Юлия", "Михайловна");
+	
+	
+	
+	public void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,63 @@
+package lab6;
+
+public class Student {
+	private String name;
+	private String surname;
+	private String patronymic;
+	
+	public Student(String name, String surname, String patronymic) {
+		this.name = name;
+		this.surname = surname;
+		this.patronymic = patronymic;
+	}
+	
+	// getters
+	public String getName() {
+		return name;
+	}
+	
+	public String getSurname() {
+		return surname;
+	}
+	
+	public String getPatronymic() {
+		return patronymic;
+	}
+	
+	//setters
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	public void setPatronymic(String patronymic) {
+		this.patronymic = patronymic;
+	}
+	
+	public String toString() {
+		return ("Студент " + surname + " " + name + " " + patronymic);
+	}
+	
+	public int hashCode() {
+		return (int) name.hashCode() + surname.hashCode()  + patronymic.hashCode();
+	}
+	
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() == obj.getClass()) {
+			Student temp = (Student) obj;
+			return name.equals(temp.name) &&
+					surname.equals(temp.surname) &&
+					patronymic.equals(temp.patronymic);
+		}
+		return false;
+	}
+}

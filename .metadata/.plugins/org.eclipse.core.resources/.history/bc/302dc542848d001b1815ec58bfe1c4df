@@ -1,0 +1,71 @@
+package lab6;
+
+import java.util.LinkedList;
+
+public class Group implements Cloneable, Comparable<Group> {
+	private String specialtyName;
+	private Integer groupIndex;
+	private LinkedList<Student> Students = new LinkedList<Student>();
+	
+	public Group(String specialtyName, int groupIndex) {
+		this.specialtyName = specialtyName;
+		this.groupIndex = groupIndex;
+	}
+	
+	// getters
+	public String getSpecialtyName() {
+		return specialtyName;
+	}
+	
+	public int getGroupIndex() {
+		return groupIndex;
+	}
+	
+	public int getStudentsAmount() {
+		return Students.size();
+	}
+	
+	// setters
+	public void setSpecialtyName(String specialtyName) {
+		this.specialtyName = specialtyName;
+	}
+	
+	public void setGroupIndex(int groupIndex) {
+		this.groupIndex = groupIndex;
+	}
+	
+	public void addStudent(Student student) {
+		this.Students.add(student);
+	}
+	
+	public String toString() {
+		return (String)("Группа " + specialtyName + "индекс: " + groupIndex + "кол-во студентов: " + Students.size());
+	}
+	
+	public int hashCode() {
+		return (int) specialtyName.hashCode() + groupIndex + Students.size();
+	}
+	
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() == obj.getClass()) {
+			Group temp = (Group) obj;
+			return specialtyName.equals(temp.specialtyName) &&
+					groupIndex == temp.groupIndex &&
+					this.getStudentsAmount() == getStudentsAmount();
+		}
+		return false;
+	}
+	
+	public int compareTo(Group group) {
+		if (specialtyName.compareTo(group.getSpecialtyName()) != 0) {
+			return groupIndex.compareTo(group.getGroupIndex());
+		}
+		return specialtyName.compareTo(group.getSpecialtyName());
+	}
+}
