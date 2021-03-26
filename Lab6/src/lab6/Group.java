@@ -64,7 +64,7 @@ public class Group implements Cloneable, Comparable<Group> {
 			Group temp = (Group) obj;
 			return specialtyName.equals(temp.specialtyName) &&
 					groupIndex == temp.groupIndex &&
-					this.getStudentsAmount() == getStudentsAmount();
+					this.getStudentsAmount() == temp.getStudentsAmount();
 		}
 		return false;
 	}

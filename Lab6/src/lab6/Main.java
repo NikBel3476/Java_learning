@@ -34,12 +34,28 @@ public class Main {
 				new Group("Информатика", 5, informatics)
 		};
 		
+		// hashCode
+		System.out.println("----------Hash codes----------");
+		System.out.println(Groups[2].hashCode());
+		System.out.println(Students[4].hashCode());
+		
 		// cloning
 		Group copiedGroup = Groups[0].clone();
 		Student copiedStudent = Students[0].clone();
 		System.out.println("----------Copied group and student----------");
 		System.out.println(copiedGroup.toString());
 		System.out.println(copiedStudent.toString());
+		
+		// compare
+		System.out.println("----------Compare----------");
+		System.out.println("Сравнение групп " + Groups[2].toString() + " и " + Groups[3].toString());
+		System.out.println(Groups[2].equals(Groups[3]));
+		System.out.println("Сравнение студентов " + Students[2].toString() + " и " + Students[3].toString());
+		System.out.println(Students[2].equals(Students[3]));
+		System.out.println("Сравнение групп " + Groups[0].toString() + " и " + copiedGroup.toString());
+		System.out.println(Groups[0].equals(copiedGroup));
+		System.out.println("Сравнение студентов " + Students[0].toString() + " и " + copiedStudent.toString());
+		System.out.println(Students[0].equals(copiedStudent));
 		
 		// students in group
 		System.out.println("----------Students in group----------");
