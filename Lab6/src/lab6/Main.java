@@ -19,20 +19,24 @@ public class Main {
 				new Student("Петров", "Михаил", "Андреевич"),
 		};
 		
-		Student[] math = {Students[0], Students[1]};
-		Student[] chemistry = {Students[2], Students[3]};
-		Student[] physics = {Students[4], Students[5], Students[6]};
-		Student[] history = {Students[7]};
-		Student[] informatics = {Students[8], Students[9]};
-		
-		
 		Group[] Groups = {
-				new Group("Математика", 1, math),
-				new Group("Физика", 2, physics),
-				new Group("Химия", 3, chemistry),
-				new Group("История", 4, history),
-				new Group("Информатика", 5, informatics)
+				new Group("Математика", 1),
+				new Group("Физика", 2),
+				new Group("Химия", 3),
+				new Group("История", 4),
+				new Group("Информатика", 5)
 		};
+		
+		Groups[0].addStudent(Students[0]);
+		Groups[0].addStudent(Students[1]);
+		Groups[1].addStudent(Students[2]);
+		Groups[1].addStudent(Students[3]);
+		Groups[2].addStudent(Students[4]);
+		Groups[2].addStudent(Students[5]);
+		Groups[2].addStudent(Students[6]);
+		Groups[3].addStudent(Students[7]);
+		Groups[4].addStudent(Students[8]);
+		Groups[4].addStudent(Students[9]);
 		
 		// hashCode
 		System.out.println("----------Hash codes----------");
@@ -43,35 +47,35 @@ public class Main {
 		Group copiedGroup = Groups[0].clone();
 		Student copiedStudent = Students[0].clone();
 		System.out.println("----------Copied group and student----------");
-		System.out.println(copiedGroup.toString());
-		System.out.println(copiedStudent.toString());
+		System.out.println(copiedGroup);
+		System.out.println(copiedStudent);
 		
 		// compare
 		System.out.println("----------Compare----------");
-		System.out.println("Сравнение групп " + Groups[2].toString() + " и " + Groups[3].toString());
+		System.out.println("Сравнение групп " + Groups[2] + " и " + Groups[3]);
 		System.out.println(Groups[2].equals(Groups[3]));
-		System.out.println("Сравнение студентов " + Students[2].toString() + " и " + Students[3].toString());
+		System.out.println("Сравнение студентов " + Students[2] + " и " + Students[3]);
 		System.out.println(Students[2].equals(Students[3]));
-		System.out.println("Сравнение групп " + Groups[0].toString() + " и " + copiedGroup.toString());
+		System.out.println("Сравнение групп " + Groups[0] + " и " + copiedGroup);
 		System.out.println(Groups[0].equals(copiedGroup));
-		System.out.println("Сравнение студентов " + Students[0].toString() + " и " + copiedStudent.toString());
+		System.out.println("Сравнение студентов " + Students[0] + " и " + copiedStudent);
 		System.out.println(Students[0].equals(copiedStudent));
 		
 		// students in group
 		System.out.println("----------Students in group----------");
-		System.out.println("Студенты группы " + Groups[4].toString());
+		System.out.println("Студенты группы " + Groups[4]);
 		LinkedList<Student> studentsInGroup = Groups[4].getStudents();
 		for (Student student: studentsInGroup) {
-			System.out.println(student.toString());
+			System.out.println(student);
 		}
 		
 		// toString
 		System.out.println("----------Groups and students before sorting----------");
 		for (Group group: Groups) {
-			System.out.println(group.toString());
+			System.out.println(group);
 		}
 		for (Student student: Students) {
-			System.out.println(student.toString());
+			System.out.println(student);
 		}
 		
 		// sorting
@@ -79,10 +83,10 @@ public class Main {
 		Arrays.sort(Groups);
 		Arrays.sort(Students);
 		for (Group group: Groups) {
-			System.out.println(group.toString());
+			System.out.println(group);
 		}
 		for (Student student: Students) {
-			System.out.println(student.toString());
+			System.out.println(student);
 		}
 	}
 }

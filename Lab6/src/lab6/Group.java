@@ -7,12 +7,9 @@ public class Group implements Cloneable, Comparable<Group> {
 	private Integer groupIndex;
 	private LinkedList<Student> Students = new LinkedList<Student>();
 	
-	public Group(String specialtyName, int groupIndex, Student[] students) {
+	public Group(String specialtyName, int groupIndex) {
 		this.specialtyName = specialtyName;
 		this.groupIndex = groupIndex;
-		for (int i = 0; i < students.length; i++) {
-			Students.add(students[i]);
-		}
 	}
 	
 	// getters
@@ -64,24 +61,31 @@ public class Group implements Cloneable, Comparable<Group> {
 			Group temp = (Group) obj;
 			return specialtyName.equals(temp.specialtyName) &&
 					groupIndex == temp.groupIndex &&
-					this.getStudentsAmount() == temp.getStudentsAmount();
+					this.Students.equals(temp.getStudents());
 		}
 		return false;
 	}
 	
 	public int compareTo(Group group) {
 		if (specialtyName.compareTo(group.getSpecialtyName()) == 0) {
+			if (groupIndex.compareTo(group.getGroupIndex()) == 0) {
+				LinkedList<Student> comparableStudents = group.getStudents();
+				Integer hash = Students.hashCode();
+				Integer comparableHash = comparableStudents.hashCode();
+				return hash.compareTo(comparableHash);
+			}
 			return groupIndex.compareTo(group.getGroupIndex());
 		}
 		return specialtyName.compareTo(group.getSpecialtyName());
 	}
 	
+	@SuppressWarnings("unchecked")
 	public Group clone() {
 		try {
 			Group copy = (Group)super.clone();
 			copy.specialtyName = (String)specialtyName;
 			copy.groupIndex = (Integer)groupIndex;
-			copy.Students = (LinkedList<Student>)Students.clone();
+			copy.Students = (LinkedList<Student>) Students.clone();
 			return copy;
 		} catch(CloneNotSupportedException e) {
 			throw new InternalError("Ошибка клонирования объекта Group");
